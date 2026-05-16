@@ -98,11 +98,11 @@ const Hero = ({ logo }: HeroProps) => {
 
       {/* Scroll Indicator */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20, x: "-50%" }}
+        animate={{ opacity: 1, y: 0, x: "-50%" }}
         transition={{ delay: 1.5, duration: 1 }}
         onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        className="absolute bottom-10 left-1/2 cursor-pointer"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
