@@ -79,7 +79,7 @@ const services = [
 ];
 
 const amenities = [
-  { icon: Car, label: 'Valet Parking', desc: '200+ vehicle capacity with professional valet' },
+  { icon: Car, label: 'Valet Parking', desc: '20+ vehicle capacity with professional valet' },
   { icon: Shield, label: 'Security', desc: '24/7 trained security personnel on-site' },
   { icon: Zap, label: 'Power Backup', desc: 'Uninterrupted supply with backup generators' },
   { icon: Wind, label: 'Climate Control', desc: 'Advanced AC & heating throughout all halls' },

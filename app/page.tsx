@@ -52,22 +52,22 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Priya & Rajesh",
-      event: "Wedding Reception",
+      name: "Harish Krishnamoorthy",
+      event: "birthday party",
       rating: 5,
-      testimonial: "Olive & Orchard made our wedding reception absolutely magical. The venue was stunning, the service was impeccable, and our guests are still talking about how beautiful everything was. Truly a dream venue!"
+      testimonial: "I hosted my daughter’s birthday party in the Oak Hall yesterday, and I couldn't be happier with how everything turned out. Overall, it was a 10/10 experience. A huge thank you to the team for making my daughter’s day so special. I’ll definitely be recommending Olive & Orchard to all my friends and family!"
     },
     {
-      name: "Michael Chen",
-      event: "Corporate Gala",
+      name: "paul jagadish",
+      event: "birthday party",
       rating: 5,
-      testimonial: "We hosted our annual corporate gala at Olive & Orchard and it exceeded all expectations. The professional staff handled everything flawlessly. Highly recommend for any corporate event."
+      testimonial: "We recently hosted a birthday party at Olive and Orchards and had a great experience. The hall comfortably fits 100–130 people, making it ideal for medium sized gatherings. The ambience is beautiful and the place is very well maintained. Everyone who attended our function said the hall is simply awesome. Highly recommended for special occasions!"
     },
     {
-      name: "Sarah Johnson",
-      event: "Sweet 16 Birthday",
+      name: "Pooja Dilipkumar",
+      event: "Farewell Party",
       rating: 5,
-      testimonial: "My daughter's sweet 16 birthday was perfect thanks to Olive & Orchard. The team went above and beyond to make it special. The venue was beautiful and the service was outstanding!"
+      testimonial: "Today I went olive and orchard banquet halls.... Bcoz of my 12th farewell.... This place is so convenient for celebrate..... And also more more beautiful to see...."
     }
   ];
 

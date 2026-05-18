@@ -3,7 +3,7 @@ export const CONTACT_INFO = {
   displayPhone: "+91 72999 72020",
   whatsappPhone: "917299972020",
   email: "olive.orchardpartyhalls@gmail.com",
-  address: "148, 1, Arcot Rd, opp. to Arcot Shopping Mall, Near Ambika Theatre, Ganga Nagar, Kodambakkam, Chennai, Tamil Nadu 600024",
+  address: "New no: 148, 1, Arcot Rd, next to Slam Fitness, Ganga Nagar, Kodambakkam, Chennai, Tamil Nadu 600024",
   googleMapsUrl: "https://maps.app.goo.gl/3A52672d38b7a807",
 };
 

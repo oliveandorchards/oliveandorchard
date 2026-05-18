@@ -9,15 +9,16 @@ const Footer = () => {
   const whatsappUrl = getWhatsappUrl("Hello I would like to book Olive & Orchard Banquet Hall");
 
   const scrollToSection = (section: string) => {
-    const element = document.getElementById(section.toLowerCase().replace(' ', '-'));
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (section === 'Home') window.location.href = '/';
+    else if (section === 'About Us') window.location.href = '/about';
+    else if (section === 'Gallery') window.location.href = '/gallery';
+    else if (section === 'Services') window.location.href = '/services';
+    else if (section === 'Contact') window.location.href = '/contact';
   };
 
   const socialLinks = [
-    { name: 'Facebook', href: '#' },
-    { name: 'Instagram', href: '#' },
-    { name: 'Twitter', href: '#' },
-    { name: 'LinkedIn', href: '#' },
+    { name: 'Facebook', href: 'https://www.facebook.com/oliveandorchardhall/' },
+    { name: 'Instagram', href: 'https://www.instagram.com/olive.orchard_partyhalls' },
   ];
 
   return (
@@ -47,6 +48,8 @@ const Footer = () => {
                 <motion.a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 text-sm border border-gray-600 px-3 py-1 rounded-full hover:border-[#D4AF37]"
                 >
