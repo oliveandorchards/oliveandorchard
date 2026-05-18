@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/olive-orchard-favicon.jpg",
+  },
 };
 
 export default function RootLayout({
