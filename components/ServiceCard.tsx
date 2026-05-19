@@ -32,7 +32,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, ima
       )}
       
       {/* Overlays */}
-      <div className={`absolute inset-0 z-10 transition-colors duration-300 ${image ? 'bg-black/60 group-hover:bg-black/40' : 'glass-morphism'}`} />
+      <div className={`absolute inset-0 z-10 transition-colors duration-300 ${image ? 'bg-black/80 group-hover:bg-black/70' : 'glass-morphism'}`} />
       
       <div className="relative z-20">
         <div className="text-[#D4AF37] mb-6 transform group-hover:scale-110 transition-transform duration-300">

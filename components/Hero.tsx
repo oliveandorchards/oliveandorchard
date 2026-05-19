@@ -21,7 +21,7 @@ const Hero = ({ logo }: HeroProps) => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('https://cdn.venuelook.com/uploads/space_38868/1715169304_595x400.png')] bg-cover bg-center bg-fixed"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/80 to-black/90"></div>
       </div>
 
       {/* Hero Content */}
@@ -32,12 +32,12 @@ const Hero = ({ logo }: HeroProps) => {
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="mb-8"
+              className="mb-6"
             >
               <img 
                 src={logo} 
                 alt="Olive & Orchard Banquet Hall"
-                className="h-32 w-auto mx-auto"
+                className="h-45 w-auto mx-auto"
               />
             </motion.div>
           )}
@@ -57,7 +57,7 @@ const Hero = ({ logo }: HeroProps) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-white/90 mb-11 max-w-3xl mx-auto"
             >
               Luxury Banquet Hall for Weddings, Receptions, Birthdays & Corporate Events
             </motion.p>

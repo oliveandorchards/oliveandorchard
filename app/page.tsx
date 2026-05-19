@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
-import TestimonialCard from '@/components/TestimonialCard';
+import VideoCarousel from '@/components/VideoCarousel';
 import CTASection from '@/components/CTASection';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -15,7 +15,7 @@ export default function Home() {
     {
       icon: <Users size={48} />,
       title: "Spacious Hall",
-      description: "Accommodate up to 500 guests with comfortable seating and elegant ambiance",
+      description: "Accommodate up to 300 guests with comfortable seating and elegant ambiance",
       image: "https://content.jdmagicbox.com/v2/comp/chennai/u6/044pxx44.xx44.220224150559.d9u6/catalogue/olive-and-orchard-kodambakkam-chennai-banquet-halls-mqf5exf5nl.jpg"
     },
     {
@@ -50,25 +50,13 @@ export default function Home() {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Harish Krishnamoorthy",
-      event: "birthday party",
-      rating: 5,
-      testimonial: "I hosted my daughter’s birthday party in the Oak Hall yesterday, and I couldn't be happier with how everything turned out. Overall, it was a 10/10 experience. A huge thank you to the team for making my daughter’s day so special. I’ll definitely be recommending Olive & Orchard to all my friends and family!"
-    },
-    {
-      name: "paul jagadish",
-      event: "birthday party",
-      rating: 5,
-      testimonial: "We recently hosted a birthday party at Olive and Orchards and had a great experience. The hall comfortably fits 100–130 people, making it ideal for medium sized gatherings. The ambience is beautiful and the place is very well maintained. Everyone who attended our function said the hall is simply awesome. Highly recommended for special occasions!"
-    },
-    {
-      name: "Pooja Dilipkumar",
-      event: "Farewell Party",
-      rating: 5,
-      testimonial: "Today I went olive and orchard banquet halls.... Bcoz of my 12th farewell.... This place is so convenient for celebrate..... And also more more beautiful to see...."
-    }
+  const shortVideos = [
+    { id: "R7GEfdpZR4M", title: "✨ Sharmitha Pa Review" },
+    { id: "kZ7OhLWhym8", title: "Birthday Celebration Review" },
+    { id: "7jVuVw7Y-Eo", title: "Preethi Sanjiv Review" },
+    { id: "eP8klOf8Ins", title: "Happy Client Testimonial" },
+    { id: "6UlkBzuQNt8", title: "Delighted Family Review" },
+    { id: "MQ0hq8nK8eo", title: "Vijay TV Bala Testimony" }
   ];
 
   return (
@@ -215,32 +203,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* YouTube Shorts Carousel Section */}
       <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-black overflow-hidden">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">
-              What Our <span className="text-[#D4AF37]">Clients Say</span>
+              Moments & <span className="text-[#D4AF37]">Celebrations</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Don't just take our word for it - hear from our happy clients
+              Watch beautiful memories and celebrations captured live at Olive & Orchard
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={index}
-                {...testimonial}
-                delay={index * 0.2}
-              />
-            ))}
-          </div>
+          <VideoCarousel videos={shortVideos} />
         </div>
       </section>
 

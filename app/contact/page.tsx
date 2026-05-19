@@ -196,7 +196,7 @@ export default function Contact() {
                 Working Hours
               </p>
               <p className="text-white text-lg font-semibold">
-                Monday – Sunday &nbsp;·&nbsp; 9:00 AM – 10:00 PM
+                Monday – Sunday &nbsp;·&nbsp; 9:30 AM – 7:30 PM
               </p>
             </div>
             <motion.a
