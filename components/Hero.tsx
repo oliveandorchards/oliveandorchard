@@ -27,20 +27,16 @@ const Hero = ({ logo }: HeroProps) => {
       {/* Hero Content */}
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="container mx-auto px-6 text-center">
-          {logo && (
-            <motion.div
-              initial={{ opacity: 0, y: -30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="mb-6"
-            >
-              <img 
-                src={logo} 
-                alt="Olive & Orchard Banquet Hall"
-                className="h-45 w-auto mx-auto"
-              />
-            </motion.div>
-          )}
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="mb-6"
+          >
+            <h2 className="font-great-vibes text-6xl md:text-8xl text-white tracking-wider select-none">
+              Olive & Orchard
+            </h2>
+          </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 50 }}

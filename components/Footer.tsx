@@ -33,11 +33,9 @@ const Footer = () => {
             className="col-span-1 md:col-span-2"
           >
             <div className="flex items-center mb-4">
-              <img 
-                src="/olive-logo.png" 
-                alt="Olive & Orchard Banquet Hall"
-                className="h-16 w-auto"
-              />
+              <span className="font-great-vibes text-4xl text-white tracking-wider select-none">
+                Olive & Orchard
+              </span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Creating unforgettable celebrations with luxury, elegance, and perfection. 

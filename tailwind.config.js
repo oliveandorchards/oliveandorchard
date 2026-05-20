@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         'playfair': ['Playfair Display', 'serif'],
         'poppins': ['Poppins', 'sans-serif'],
+        'great-vibes': ['Great Vibes', 'cursive'],
       },
       colors: {
         'wine-red': '#7A0F19',

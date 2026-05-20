@@ -52,11 +52,9 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <img 
-              src="/olive-logo.png" 
-              alt="Olive & Orchard Banquet Hall"
-              className="h-14 w-auto"
-            />
+            <a href="/" className="font-great-vibes text-3xl md:text-4xl text-white tracking-wider">
+              Olive & Orchard
+            </a>
           </motion.div>
 
           {/* Desktop Menu */}

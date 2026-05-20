@@ -86,11 +86,9 @@ export default function Gallery() {
             className="text-center"
           >
             <div className="mb-8">
-              <img 
-                src="/olive-logo.png" 
-                alt="Olive & Orchard Banquet Hall"
-                className="h-24 w-auto mx-auto"
-              />
+              <span className="font-great-vibes text-5xl md:text-6xl text-elegant-gold tracking-wider select-none">
+                Olive & Orchard
+              </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-playfair">
               Our <span className="text-[#D4AF37]">Gallery</span>
