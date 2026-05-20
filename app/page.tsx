@@ -63,8 +63,6 @@ export default function Home() {
     <div className="min-h-screen bg-black overflow-x-hidden">
       <Navbar />
       <Hero logo="/olive-logo.png" />
-      
-      {/* Features Section */}
       <section id="features" className="py-20 bg-gradient-to-b from-black to-[#0a0a0a] overflow-hidden">
         <div className="container mx-auto px-6">
           <motion.div
