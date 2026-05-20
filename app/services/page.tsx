@@ -87,25 +87,187 @@ const amenities = [
   { icon: Lightbulb, label: 'Smart Lighting', desc: 'Programmable ambient and stage lighting' },
 ];
 
-const packages = [
+interface PackageItem {
+  name: string;
+  hallName: string;
+  pax: string;
+  location: string;
+  menu: string;
+  price: number;
+  badge?: string | null;
+  perks: string[];
+}
+
+const packages: PackageItem[] = [
   {
-    name: 'Essential',
+    name: "Super Saver Pack",
+    hallName: "Olive Hall",
+    pax: "120 to 250 Pax",
+    location: "Party Hall (2nd Floor)",
+    menu: "Non-Veg Buffet Menu 2",
+    price: 950,
+    badge: "Popular",
+    perks: [
+      "Fondant Theme Cake (1.5 kg)",
+      "Basic Backdrop Decoration",
+      "Designed E-Invite",
+      "L-Shaped Balloon Arch",
+      "Candid or Traditional Photography",
+      "5 x 7 feet Banner",
+      "Valet Driver (1 no)"
+    ]
+  },
+  {
+    name: "Mega Saver Pack",
+    hallName: "Olive Hall",
+    pax: "120 to 250 Pax",
+    location: "Party Hall (2nd Floor)",
+    menu: "Veg / Non-Veg Buffet Menu 2",
+    price: 1000,
+    badge: "Best Value",
+    perks: [
+      "Fondant Theme Cake (1.5 kg)",
+      "Basic Backdrop Decoration",
+      "Designed E-Invite",
+      "L-Shaped Balloon Arch",
+      "Candid or Traditional Photography",
+      "Car Entry for Kids",
+      "5 x 7 feet Entrance Banner",
+      "Popcorn Counter",
+      "Cotton Candy Counter",
+      "Valet Parking Drivers (2 nos)"
+    ]
+  },
+  {
+    name: "Farewell Pack",
+    hallName: "Olive Hall",
+    pax: "120 to 250 Pax",
+    location: "Party Hall (2nd Floor)",
+    menu: "Veg / Non-Veg Menu 2",
+    price: 1050,
     badge: null,
-    sub: 'Elegant Foundation',
-    perks: ['Hall rental · 6 hrs', 'Basic seating', 'Standard lighting', 'Parking facility', 'Security service'],
+    perks: [
+      "Fondant Theme Cake",
+      "Backdrop Decoration",
+      "Candid or Traditional Photography",
+      "Entrance Banner",
+      "DJ",
+      "Panipuri Counter"
+    ]
   },
   {
-    name: 'Signature',
-    badge: 'Most Popular',
-    sub: 'Full Experience',
-    perks: ['Hall rental · 8 hrs', 'Premium seating', 'Lighting & sound', 'Basic decoration', 'Catering coordination', 'Photography package'],
+    name: "Ultra Saver Pack",
+    hallName: "Olive Hall",
+    pax: "120 to 250 Pax",
+    location: "Party Hall (2nd Floor)",
+    menu: "Non-Veg Buffet Menu 3",
+    price: 1100,
+    badge: null,
+    perks: [
+      "Fondant Theme Cake",
+      "5 x 7 feet Entrance Banner",
+      "Basic Backdrop Decoration",
+      "Designed E-Invite",
+      "L-Shaped Balloon Arch",
+      "Candid or Traditional Photography",
+      "Kids Car Entry",
+      "Cotton Candy Counter",
+      "Popcorn Counter",
+      "Valet Parking Drivers (2 nos)",
+      "Return Gift from Hall"
+    ]
   },
   {
-    name: 'Prestige',
-    badge: 'All-Inclusive',
-    sub: 'Absolute Luxury',
-    perks: ['Hall rental · 12 hrs', 'Luxury seating', 'Premium A/V', 'Full décor service', 'Complete catering', 'Pro photography', 'Event coordinator'],
+    name: "The Grand Pack",
+    hallName: "Olive Hall",
+    pax: "120 to 250 Pax",
+    location: "Party Hall (1st & 2nd Floor)",
+    menu: "Non-Veg 6 or Deluxe Menu",
+    price: 1800,
+    badge: "Premium Choice",
+    perks: [
+      "Fondant Theme Cake (2 kg)",
+      "Backdrop Decoration",
+      "Designed E-Invite",
+      "Candid or Traditional Photography",
+      "Candid Videography (3 mins)",
+      "Kids Car Entry",
+      "DJ with Smoke & Light",
+      "5 x 7 feet Entrance Banner",
+      "Caricature",
+      "Cotton Candy Counter",
+      "Popcorn Counter",
+      "Panipuri Counter",
+      "Balloon Sculpting",
+      "Valet Parking Drivers (3 nos)",
+      "Return Gift from Hall"
+    ]
   },
+  {
+    name: "Baby Shower Pack",
+    hallName: "Olive Hall",
+    pax: "120 to 250 Pax",
+    location: "Party Hall (2nd Floor)",
+    menu: "5 Variety Rice Food Menu",
+    price: 1100,
+    badge: null,
+    perks: [
+      "Bangle Backdrop Decoration",
+      "5 x 7 feet Entrance Banner",
+      "Designed E-Invite",
+      "Candid or Traditional Photography",
+      "Valet Parking Drivers (2 nos)"
+    ]
+  },
+  {
+    name: "Super Saver Pack",
+    hallName: "Orchard Hall",
+    pax: "50 to 75 Pax",
+    location: "Party Hall (1st Floor)",
+    menu: "Veg or Non-Veg Menu",
+    price: 1200,
+    badge: null,
+    perks: [
+      "Basic Backdrop Decoration",
+      "Fondant Theme Cake (1.5 kg)",
+      "Designed E-Invite",
+      "5 x 7 feet Entrance Banner",
+      "Candid or Traditional Photography"
+    ]
+  },
+  {
+    name: "Farewell Pack",
+    hallName: "Orchard Hall",
+    pax: "50 to 75 Pax",
+    location: "Party Hall (1st Floor)",
+    menu: "Food Menu 2",
+    price: 1400,
+    badge: null,
+    perks: [
+      "Backdrop Decoration",
+      "Fondant Theme Cake",
+      "DJ",
+      "Candid or Traditional Photography"
+    ]
+  },
+  {
+    name: "Super Saver Pack",
+    hallName: "Oak Hall",
+    pax: "100 to 120 Pax",
+    location: "Party Hall (1st Floor)",
+    menu: "Veg or Non-Veg Menu 2",
+    price: 1350,
+    badge: "Popular",
+    perks: [
+      "Basic Backdrop Decoration",
+      "Fondant Theme Cake (1.5 kg)",
+      "5 x 7 feet Entrance Banner",
+      "Kids Car Entry",
+      "Candid or Traditional Photography",
+      "Valet Driver (2 nos)",
+      "Designed E-Invite"
+    ]
+  }
 ];
 
 /* ─── Service Tab ─── */
@@ -134,47 +296,79 @@ function ServicePanel({ service, isActive, onClick }: { service: typeof services
 }
 
 /* ─── Package Card ─── */
-function PackageCard({ pkg, i }: { pkg: typeof packages[0]; i: number }) {
-  const isCenter = i === 1;
+function PackageCard({ pkg, i }: { pkg: PackageItem; i: number }) {
+  const isFeatured = pkg.badge !== null && pkg.badge !== undefined;
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: i * 0.12, type: 'spring', stiffness: 80 }}
+      transition={{ duration: 0.6, delay: i * 0.08, type: 'spring', stiffness: 80 }}
       whileHover={{ y: -6 }}
       className={`relative rounded-2xl p-8 flex flex-col transition-shadow duration-300 ${
-        isCenter
-          ? 'bg-[#D4AF37]/10 border-2 border-[#D4AF37] shadow-[0_0_60px_rgba(212,175,55,0.2)]'
-          : 'bg-[#0d0d0d] border border-white/10 hover:border-white/20'
+        isFeatured
+          ? 'bg-[#D4AF37]/10 border border-[#D4AF37] shadow-[0_0_60px_rgba(212,175,55,0.15)]'
+          : 'bg-[#0d0d0d] border border-white/10 hover:border-[#D4AF37]/30'
       }`}
     >
       {pkg.badge && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-[#7A0F19] text-xs font-bold px-4 py-1 rounded-full">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-[#7A0F19] text-[10px] tracking-wider uppercase font-extrabold px-3 py-1 rounded-full shadow-md">
           {pkg.badge}
         </div>
       )}
-      <p className="text-gray-500 text-xs tracking-widest uppercase mb-1">{pkg.sub}</p>
-      <h3 className="font-playfair text-3xl font-bold text-white mb-6">{pkg.name}</h3>
-      <ul className="space-y-3 mb-8 flex-1">
+      
+      {/* Hall Name & Pax Badge */}
+      <div className="flex justify-between items-center mb-1 text-[11px] font-bold uppercase tracking-widest text-[#D4AF37]">
+        <span>{pkg.hallName}</span>
+        <span className="text-white/60">{pkg.pax}</span>
+      </div>
+
+      <h3 className="font-playfair text-2xl font-bold text-white mb-4">{pkg.name}</h3>
+
+      {/* Location & Menu Info */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        <span className="bg-white/5 border border-white/10 text-gray-400 text-[10px] font-semibold px-2 py-0.5 rounded">
+          {pkg.location}
+        </span>
+        <span className="bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-[10px] font-semibold px-2 py-0.5 rounded">
+          {pkg.menu}
+        </span>
+      </div>
+
+      {/* Perks List */}
+      <ul className="space-y-3 mb-8 flex-grow">
         {pkg.perks.map((p, j) => (
           <li key={j} className="flex items-start gap-2.5 text-gray-300 text-sm">
-            <CheckCircle2 size={15} className={`flex-shrink-0 mt-0.5 ${isCenter ? 'text-[#D4AF37]' : 'text-gray-600'}`} />
-            {p}
+            <CheckCircle2 size={15} className={`flex-shrink-0 mt-0.5 ${isFeatured ? 'text-[#D4AF37]' : 'text-gray-600'}`} />
+            <span className="leading-tight">{p}</span>
           </li>
         ))}
       </ul>
-      <motion.a
-        href={`${WA_BASE}${encodeURIComponent(pkg.name + ' Package')}`}
-        target="_blank" rel="noopener noreferrer"
-        whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-        className={`w-full py-3.5 rounded-full font-bold text-sm text-center transition-all duration-300 flex items-center justify-center gap-2 ${
-          isCenter
-            ? 'gold-gradient text-[#7A0F19] hover-glow'
-            : 'border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37]/10'
-        }`}
-      >
-        Get Quote <ArrowUpRight size={14} />
-      </motion.a>
+
+      {/* Pricing and Inquiry */}
+      <div className="mt-auto pt-6 border-t border-white/5 flex flex-col gap-4">
+        <div>
+          <span className="text-gray-500 text-xs block mb-1">Pricing</span>
+          <div className="flex items-baseline gap-1">
+            <span className="text-3xl font-black text-[#D4AF37]">₹{pkg.price.toLocaleString()}</span>
+            <span className="text-gray-400 text-xs">/ head + GST</span>
+          </div>
+        </div>
+
+        <motion.a
+          href={getWhatsappUrl(`Hello, I would like to inquire about the ${pkg.name} for ${pkg.hallName} (${pkg.price} per head package).`)}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className={`w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+            isFeatured
+              ? 'bg-[#D4AF37] text-[#7A0F19] hover:bg-[#c4a030] shadow-[0_0_20px_rgba(212,175,55,0.2)]'
+              : 'border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37]/10'
+          }`}
+        >
+          Book / Inquire <ArrowUpRight size={13} />
+        </motion.a>
+      </div>
     </motion.div>
   );
 }
@@ -182,12 +376,17 @@ function PackageCard({ pkg, i }: { pkg: typeof packages[0]; i: number }) {
 /* ─── Main ─── */
 export default function Services() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [selectedHall, setSelectedHall] = useState('all');
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
   const textOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   const active = services[activeIdx];
+
+  const filteredPackages = selectedHall === 'all'
+    ? packages
+    : packages.filter(pkg => pkg.hallName.toLowerCase().startsWith(selectedHall));
 
   return (
     <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
@@ -388,12 +587,38 @@ export default function Services() {
         <div className="container mx-auto px-6 max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <p className="text-[#D4AF37] text-xs font-bold tracking-[0.35em] uppercase mb-3">Pricing</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white">Flexible <span className="text-[#D4AF37]">Packages</span></h2>
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white">Special <span className="text-[#D4AF37]">Packages</span></h2>
             <p className="text-gray-500 mt-3">Transparent pricing — no hidden fees, no surprises.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {packages.map((pkg, i) => <PackageCard key={pkg.name} pkg={pkg} i={i} />)}
+          {/* Hall Filter Tabs */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {[
+              { id: 'all', label: 'All Halls' },
+              { id: 'olive', label: 'Olive Hall (120-250 Pax)' },
+              { id: 'orchard', label: 'Orchard Hall (50-75 Pax)' },
+              { id: 'oak', label: 'Oak Hall (100-120 Pax)' },
+            ].map((tab) => (
+              <motion.button
+                key={tab.id}
+                onClick={() => setSelectedHall(tab.id)}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border ${
+                  selectedHall === tab.id
+                    ? 'bg-[#D4AF37] text-[#7A0F19] border-[#D4AF37] shadow-[0_0_25px_rgba(212,175,55,0.25)]'
+                    : 'bg-white/5 text-gray-400 hover:text-white border-white/10 hover:border-white/20'
+                }`}
+              >
+                {tab.label}
+              </motion.button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredPackages.map((pkg, i) => (
+              <PackageCard key={`${pkg.hallName}-${pkg.name}-${i}`} pkg={pkg} i={i} />
+            ))}
           </div>
 
           <motion.p
@@ -404,6 +629,54 @@ export default function Services() {
           >
             All packages are fully customisable. <a href="/contact" className="text-[#D4AF37] hover:underline">Contact us</a> for a bespoke quote.
           </motion.p>
+
+          {/* Facilities Inclusive */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mt-24 border-t border-white/10 pt-16 max-w-4xl mx-auto"
+          >
+            <h3 className="font-playfair text-2xl md:text-3xl font-bold text-center text-white mb-2">
+              Facilities <span className="text-[#D4AF37]">Inclusive</span>
+            </h3>
+            <p className="text-gray-500 text-sm text-center mb-10">
+              Every booking includes access to these premium services and amenities at no extra cost
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                "Maintenance Charges",
+                "Basic Stage Backdrop",
+                "Air Conditioner Service (5 Hours)",
+                "Chairs with Chair Cloths",
+                "Speaker with Mic",
+                "Electric Charges",
+                "Cleaning Charges",
+                "Separate Car Parking Area",
+                "Emergency Power Backup",
+                "Complimentary Bride & Groom Room",
+                "Valet Parking Services (2 nos)",
+                "Mehandi Services"
+              ].map((facility, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-3 bg-[#0d0d0d] border border-white/5 p-4 rounded-xl hover:border-[#D4AF37]/30 transition-all duration-300 group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#7A0F19] transition-all duration-300 flex-shrink-0">
+                    <CheckCircle2 size={14} />
+                  </div>
+                  <span className="text-gray-300 text-xs font-medium leading-tight group-hover:text-white transition-colors duration-300">
+                    {facility}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Phone, Calendar } from 'lucide-react';
 import { getWhatsappUrl } from '@/lib/constants';
@@ -8,8 +9,22 @@ interface HeroProps {
   logo?: string;
 }
 
+const BACKGROUND_IMAGES = [
+  'https://cdn.venuelook.com/uploads/space_38868/1715169304_595x400.png',
+  'https://imgcdn.bookmywed.in/UploadImages/venue/1b65f645-c7c4-4d7d-8a2e-4febab243580-gallery.jpg',
+  'https://oliveandorchards.netlify.app/photos/2.jpeg'
+];
+
 const Hero = ({ logo }: HeroProps) => {
   const whatsappUrl = getWhatsappUrl("Hello I would like to book Olive & Orchard Banquet Hall");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % BACKGROUND_IMAGES.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
 
   const scrollToNext = () => {
     const nextSection = document.getElementById('features');
@@ -18,9 +33,18 @@ const Hero = ({ logo }: HeroProps) => {
 
   return (
     <section id="home" className="relative h-screen overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('https://cdn.venuelook.com/uploads/space_38868/1715169304_595x400.png')] bg-cover bg-center bg-fixed"></div>
+      {/* Background Image Carousel with Overlay */}
+      <div className="absolute inset-0 overflow-hidden bg-black">
+        {BACKGROUND_IMAGES.map((img, index) => (
+          <motion.div
+            key={img}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{ backgroundImage: `url(${img})` }}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/80 to-black/90"></div>
       </div>
 

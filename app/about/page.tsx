@@ -286,8 +286,6 @@ export default function About() {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-            <RingCounter value="5K+" label="Events" />
-            <RingCounter value="50K+" label="Guests" color="#C0A060" />
             <RingCounter value="5+" label="Years" color="#E8D5A3" />
             <RingCounter value="100%" label="Satisfaction" />
           </div>

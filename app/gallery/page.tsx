@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, Play } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -21,46 +21,48 @@ export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const categories = ['all', 'weddings', 'receptions', 'birthdays', 'videos'];
+  const categories = ['all', 'orchard hall', 'oak hall', 'olive hall', 'videos'];
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const categoryParam = params.get('category');
+      if (categoryParam && categories.includes(categoryParam.toLowerCase())) {
+        setSelectedCategory(categoryParam.toLowerCase());
+      }
+    }
+  }, []);
 
   const galleryImages: GalleryImage[] = [
-    // Weddings
-    { id: 1, src: 'https://oliveandorchards.netlify.app/photos/2.jpeg', category: 'weddings', title: 'Elegant Wedding Ceremony', height: 'h-64' },
-    { id: 2, src: 'https://oliveandorchards.netlify.app/photos/5.jpeg', category: 'weddings', title: 'Romantic Reception', height: 'h-80' },
+    // Orchard Hall
+    { id: 1, src: 'https://oliveandorchards.netlify.app/photos/2.jpeg', category: 'orchard hall', title: 'Orchard Hall Grand Stage', height: 'h-64' },
+    { id: 2, src: 'https://oliveandorchards.netlify.app/photos/5.jpeg', category: 'orchard hall', title: 'Orchard Hall Reception', height: 'h-80' },
+    { id: 3, src: 'https://oliveandorchards.netlify.app/photos/12.jpeg', category: 'orchard hall', title: 'Orchard Hall Floral Decor', height: 'h-56' },
+    { id: 4, src: 'https://oliveandorchards.netlify.app/photos/6.jpeg', category: 'orchard hall', title: 'Orchard Hall Grand Entrance', height: 'h-72' },
     
-    // Video 1
+    // Oak Hall
+    { id: 17, src: 'https://oliveandorchards.netlify.app/photos/oak-1.jpeg', category: 'oak hall', title: 'Oak Hall Interior View 1', height: 'h-64' },
+    { id: 18, src: 'https://oliveandorchards.netlify.app/photos/oak-2.jpeg', category: 'oak hall', title: 'Oak Hall Seating Layout', height: 'h-80' },
+    { id: 19, src: 'https://oliveandorchards.netlify.app/photos/oak-3.jpeg', category: 'oak hall', title: 'Oak Hall Modern Decor', height: 'h-56' },
+    { id: 20, src: 'https://oliveandorchards.netlify.app/photos/oak-4.jpeg', category: 'oak hall', title: 'Oak Hall Entrance', height: 'h-72' },
+    { id: 6, src: 'https://oliveandorchards.netlify.app/photos/9.jpeg', category: 'oak hall', title: 'Oak Hall Evening Dinner', height: 'h-80' },
+    { id: 8, src: 'https://oliveandorchards.netlify.app/photos/19.jpeg', category: 'oak hall', title: 'Oak Hall Stage Lights', height: 'h-72' },
+    { id: 9, src: 'https://oliveandorchards.netlify.app/photos/18.jpeg', category: 'oak hall', title: 'Oak Hall Party Setting', height: 'h-64' },
+
+    // Olive Hall
+    { id: 21, src: 'https://oliveandorchards.netlify.app/photos/olive-1.jpeg', category: 'olive hall', title: 'Olive Hall Celebrations', height: 'h-64' },
+    { id: 22, src: 'https://oliveandorchards.netlify.app/photos/olive-2.jpeg', category: 'olive hall', title: 'Olive Hall Seating Arrangement', height: 'h-80' },
+    { id: 5, src: 'https://oliveandorchards.netlify.app/photos/10.jpeg', category: 'olive hall', title: 'Olive Hall', height: 'h-64' },
+    { id: 7, src: 'https://oliveandorchards.netlify.app/photos/22.jpeg', category: 'olive hall', title: 'Olive Hall', height: 'h-56' },
+    { id: 10, src: 'https://oliveandorchards.netlify.app/photos/17.jpeg', category: 'olive hall', title: 'Olive Hall Birthdays', height: 'h-80' },
+
+    // Videos
     { id: 11, src: 'https://www.youtube.com/embed/IKBF86eTuTs', category: 'videos', title: 'OLIVE & ORCHARD BANQUET HALL', height: 'h-[500px]', type: 'video' },
-
-    { id: 3, src: 'https://oliveandorchards.netlify.app/photos/12.jpeg', category: 'weddings', title: 'Beautiful Decor', height: 'h-56' },
-    { id: 4, src: 'https://oliveandorchards.netlify.app/photos/6.jpeg', category: 'weddings', title: 'Grand Entrance', height: 'h-72' },
-    
-    // Video 2
     { id: 12, src: 'https://www.youtube.com/embed/ZNi2LwPx_PM', category: 'videos', title: 'Ultimate Party Spot', height: 'h-[500px]', type: 'video' },
-
-    // Receptions
-    { id: 5, src: 'https://oliveandorchards.netlify.app/photos/10.jpeg', category: 'receptions', title: 'Gala Dinner', height: 'h-64' },
-    
-    // Video 3
     { id: 13, src: 'https://www.youtube.com/embed/YtW4uSa4whs', category: 'videos', title: 'Olive & Orchard Party Hall', height: 'h-[500px]', type: 'video' },
-
-    { id: 6, src: 'https://oliveandorchards.netlify.app/photos/9.jpeg', category: 'receptions', title: 'Evening Reception', height: 'h-80' },
-    { id: 7, src: 'https://oliveandorchards.netlify.app/photos/22.jpeg', category: 'receptions', title: 'Elegant Dining', height: 'h-56' },
-    
-    // Video 4
     { id: 14, src: 'https://www.youtube.com/embed/HxHGbfJRZ58', category: 'videos', title: 'LUXURY, STYLE, GRACE', height: 'h-[500px]', type: 'video' },
-
-    // Birthdays
-    { id: 8, src: 'https://oliveandorchards.netlify.app/photos/19.jpeg', category: 'birthdays', title: 'Sweet 16 Celebration', height: 'h-72' },
-    
-    // Video 5
     { id: 15, src: 'https://www.youtube.com/embed/rijHDV_Hz9Q', category: 'videos', title: 'OLIVE AND ORCHARDS BANQUET HALL', height: 'h-[500px]', type: 'video' },
-
-    { id: 9, src: 'https://oliveandorchards.netlify.app/photos/18.jpeg', category: 'birthdays', title: 'Birthday Party', height: 'h-64' },
-    
-    // Video 6
     { id: 16, src: 'https://www.youtube.com/embed/jqvr_GUu9xc', category: 'videos', title: 'Olive & Orchard Party Hall', height: 'h-[500px]', type: 'video' },
-
-    { id: 10, src: 'https://oliveandorchards.netlify.app/photos/17.jpeg', category: 'birthdays', title: 'Kids Birthday', height: 'h-80' },
   ];
 
   const filteredImages = selectedCategory === 'all' 
