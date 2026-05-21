@@ -105,7 +105,7 @@ const packages: PackageItem[] = [
     pax: "120 to 250 Pax",
     location: "Party Hall (2nd Floor)",
     menu: "Non-Veg Buffet Menu 2",
-    price: 950,
+    price: 1200,
     badge: "Popular",
     perks: [
       "Fondant Theme Cake (1.5 kg)",
@@ -123,7 +123,7 @@ const packages: PackageItem[] = [
     pax: "120 to 250 Pax",
     location: "Party Hall (2nd Floor)",
     menu: "Veg / Non-Veg Buffet Menu 2",
-    price: 1000,
+    price: 1500,
     badge: "Best Value",
     perks: [
       "Fondant Theme Cake (1.5 kg)",
@@ -144,7 +144,7 @@ const packages: PackageItem[] = [
     pax: "120 to 250 Pax",
     location: "Party Hall (2nd Floor)",
     menu: "Veg / Non-Veg Menu 2",
-    price: 1050,
+    price: 1800,
     badge: null,
     perks: [
       "Fondant Theme Cake",
@@ -161,7 +161,7 @@ const packages: PackageItem[] = [
     pax: "120 to 250 Pax",
     location: "Party Hall (2nd Floor)",
     menu: "Non-Veg Buffet Menu 3",
-    price: 1100,
+    price: 2000,
     badge: null,
     perks: [
       "Fondant Theme Cake",
@@ -183,7 +183,7 @@ const packages: PackageItem[] = [
     pax: "120 to 250 Pax",
     location: "Party Hall (1st & 2nd Floor)",
     menu: "Non-Veg 6 or Deluxe Menu",
-    price: 1800,
+    price: 2500,
     badge: "Premium Choice",
     perks: [
       "Fondant Theme Cake (2 kg)",
@@ -209,7 +209,7 @@ const packages: PackageItem[] = [
     pax: "120 to 250 Pax",
     location: "Party Hall (2nd Floor)",
     menu: "5 Variety Rice Food Menu",
-    price: 1100,
+    price: 1000,
     badge: null,
     perks: [
       "Bangle Backdrop Decoration",
@@ -225,7 +225,7 @@ const packages: PackageItem[] = [
     pax: "50 to 75 Pax",
     location: "Party Hall (1st Floor)",
     menu: "Veg or Non-Veg Menu",
-    price: 1200,
+    price: 800,
     badge: null,
     perks: [
       "Basic Backdrop Decoration",
@@ -241,7 +241,7 @@ const packages: PackageItem[] = [
     pax: "50 to 75 Pax",
     location: "Party Hall (1st Floor)",
     menu: "Food Menu 2",
-    price: 1400,
+    price: 900,
     badge: null,
     perks: [
       "Backdrop Decoration",
@@ -256,7 +256,7 @@ const packages: PackageItem[] = [
     pax: "100 to 120 Pax",
     location: "Party Hall (1st Floor)",
     menu: "Veg or Non-Veg Menu 2",
-    price: 1350,
+    price: 1100,
     badge: "Popular",
     perks: [
       "Basic Backdrop Decoration",
@@ -346,13 +346,13 @@ function PackageCard({ pkg, i }: { pkg: PackageItem; i: number }) {
 
       {/* Pricing and Inquiry */}
       <div className="mt-auto pt-6 border-t border-white/5 flex flex-col gap-4">
-        <div>
+        {/* <div>
           <span className="text-gray-500 text-xs block mb-1">Pricing</span>
           <div className="flex items-baseline gap-1">
             <span className="text-3xl font-black text-[#D4AF37]">₹{pkg.price.toLocaleString()}</span>
             <span className="text-gray-400 text-xs">/ head + GST</span>
           </div>
-        </div>
+        </div> */}
 
         <motion.a
           href={getWhatsappUrl(`Hello, I would like to inquire about the ${pkg.name} for ${pkg.hallName} (${pkg.price} per head package).`)}
